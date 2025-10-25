@@ -1,0 +1,28 @@
+// src/style/_variables.scss
+
+// Non-changing variables
+$font-primary: 'Inter', sans-serif;
+$font-secondary: 'Manrope', sans-serif;
+$color-accent: #f9cf01;
+
+// Theming with CSS Custom Properties
+:root {
+  --color-background: #ffffff;
+  --color-surface: #f9f7f2;     
+  --color-text-primary: #262626;
+  --color-text-secondary: #737373;
+  --color-border: #ebebeb;
+  --color-button-text: #000000;
+  --color-shadow: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+  // Dark Theme
+  --color-background: #121212;
+  --color-surface: #1e1e1e;      
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #a3a3a3;
+  --color-border: #333333;
+  --color-button-text: #000000;
+  --color-shadow: rgba(0, 0, 0, 0.2);
+}

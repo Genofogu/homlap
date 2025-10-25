@@ -1,0 +1,55 @@
+// 1. Import Variables
+@import 'variables';
+
+// 2. Import Components
+@import 'Header'; 
+@import 'Hero';
+@import 'HowItWorks';
+@import 'Benefits';
+@import 'Features';
+@import 'Faq';
+@import 'Cta';
+@import 'Footer';
+@import 'Animations';
+@import 'PreRegisterPage';
+@import 'ThemeToggle';
+
+// 3. Global Resets
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// 4. Body Defaults
+body {
+  font-family: $font-primary;
+  color: var(--color-text-primary);
+  background-color:var(--color-background);
+  scroll-behavior: smooth;
+}
+
+// 5. Link & Button Resets
+a, button {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+// 6. GLOBAL REUSABLE STYLES (PASTE THE BUTTON CODE HERE)
+.button {
+  background-color: $color-accent; 
+  color: var(--color-background); 
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-family: $font-primary;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block; // Good practice for link tags styled as buttons
+
+  &:hover {
+    background-color: darken($color-accent, 5%);
+    transform: scale(1.05);
+  }
+}

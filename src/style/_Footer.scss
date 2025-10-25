@@ -1,0 +1,89 @@
+// src/style/_Footer.scss
+
+.footer {
+  padding: 64px 0;
+  background-color: var(--color-background);
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  
+  &__brand {
+    // You can add a logo image style here if you use one
+    flex-basis: 25%; // Takes up 1/4 of the space
+  }
+  
+  &__logo {
+      font-family: $font-secondary;
+      font-weight: 800;
+      font-size: 1.75rem;
+  }
+
+  &__nav {
+    flex: 1;
+    display: flex;
+    gap: 3rem;
+  }
+
+  &__nav-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    h3 {
+      font-family: $font-primary;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--color-text-secondary);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__legal {
+    border-top: 1px dashed var(--color-border);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+  }
+
+  &__legal-links {
+    display: flex;
+    gap: 1rem;
+    a:hover {
+        text-decoration: underline;
+    }
+  }
+}
+
+// Responsive Styles
+@media (max-width: 810px) {
+    .footer {
+        padding: 48px 0;
+    }
+    .footer__main {
+        flex-direction: column;
+    }
+    .footer__legal {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}

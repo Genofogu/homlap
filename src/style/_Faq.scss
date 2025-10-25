@@ -1,0 +1,182 @@
+// src/style/_Faq.scss
+
+.faq {
+  padding: 96px 0;
+  background-color: var(--color-background);
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    align-items: center;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    max-width: 650px;
+  }
+
+  .section-subtitle {
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+  }
+
+  &__grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start; // Ensures items don't stretch weirdly if one answer is long
+  }
+
+  // --- NEW FAQ ITEM COMPONENT STYLES ---
+  // This is no longer nested inside a removed .faq__item class
+  .faq-item {
+    border-bottom: 1px solid var(--color-border);
+
+    &__question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      padding: 1.5rem 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      span {
+        font-family: $font-secondary;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: var(--color-text-primary);
+        transition: color 0.3s ease;
+      }
+
+      &:hover span {
+         color: $color-accent;
+      }
+    }
+
+    &__icon {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0; // Prevents icon from squishing on small screens
+
+      .icon-bar {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 2px;
+        background-color: var(--color-text-primary);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        transform-origin: center;
+
+        &:first-child {
+          transform: translate(-50%, -50%);
+        }
+
+        &:last-child {
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+      }
+    }
+
+    &__answer {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.4s ease;
+
+      p {
+        color: var(--color-text-secondary);
+        line-height: 1.5;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+    }
+
+    // Open state styles
+    &.is-open {
+      .faq-item__question span {
+        color: $color-accent;
+      }
+
+      .faq-item__icon .icon-bar {
+         background-color: $color-accent;
+      }
+
+      .faq-item__icon .icon-bar:last-child {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      .faq-item__answer {
+        grid-template-rows: 1fr;
+        
+        p {
+            opacity: 1;
+            transform: translateY(0);
+            padding-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+  // ------------------------------------
+
+  &__cta-card {
+    width: 100%;
+    // CORRECTED: Use surface color, not text color for background
+    background-color: var(--color-surface); 
+    border-radius: 16px;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__cta-content {
+    h3 {
+      font-family: $font-secondary;
+      font-size: 36px;
+      font-weight: 600;
+      letter-spacing: -1.5px;
+      color: var(--color-text-primary);
+    }
+
+    p {
+      margin-top: 1rem;
+      color: var(--color-text-secondary);
+    }
+  }
+}
+
+// Responsive Styles
+@media (max-width: 960px) {
+  .faq {
+     &__grid {
+      grid-template-columns: 1fr; // Stack on tablets and phones
+      gap: 0; // Remove gap so borders stack nicely
+    }
+
+    &__cta-card {
+      flex-direction: column;
+      text-align: center;
+      gap: 2rem;
+    }
+
+    &__cta-content h3 {
+      font-size: 28px;
+    }
+  }
+}
