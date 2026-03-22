@@ -23,6 +23,15 @@ const Hero = () => {
             <Link to="/pre-register" className="button hero__cta">Get Started</Link>
             <a href="#how-it-works" className="hero__link">How it works</a>
           </div>
+
+          <div className="hero__store-buttons" aria-label="Download Homlap app">
+            <a href="#" aria-label="Get it on Google Play">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" />
+            </a>
+            <a href="#" aria-label="Download on the App Store">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
