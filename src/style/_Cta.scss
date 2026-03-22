@@ -1,69 +1,55 @@
 .cta {
   padding: 0 2rem;
-  margin-bottom: 96px; // Adds space before the footer
+  margin-bottom: 96px;
+  background: #f3f4f6;
 
   .container {
     max-width: 1280px;
     margin: 0 auto;
-    background-color:var(--color-background);
+    background: #121417;
     border-radius: 24px;
     display: flex;
     align-items: center;
-    overflow: hidden; // Important for the image positioning
-    padding: 3rem 0 0 3rem; // No bottom padding
+    overflow: hidden;
+    padding: 3rem;
+    gap: 2rem;
   }
 
   &__content {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 3rem;
-    padding-right: 2rem;
-    padding-bottom: 3rem; // Padding here instead of container
 
     .section-title {
-      color: var(--color-background);
-      text-align: left;
+      color: #fff;
+      font-family: $font-secondary;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 1.5rem;
     }
   }
 
-  // A 'modifier' class for a light button on a dark background
   .button--light {
-    background-color: var(--color-background);
-    color: var(--color-background);
+    background: #fff;
+    color: #111827;
   }
 
   &__visual {
     flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    align-self: flex-end; // Makes the image sit at the bottom of the container
 
     img {
       width: 100%;
-      max-width: 450px;
-      object-fit: contain;
-      // Nudges the image down slightly to match the design
-      transform: translateY(10%); 
+      border-radius: 20px;
+      max-height: 320px;
+      object-fit: cover;
     }
   }
 }
 
-// Responsive Styles
 @media (max-width: 810px) {
   .cta {
     padding: 0 1rem;
-    margin-bottom: 64px;
-  }
-  .cta .container {
-    flex-direction: column;
-    padding: 3rem 1.5rem 0; // Reset padding for mobile
-    text-align: center;
-  }
-  .cta__content {
-    align-items: center;
-    padding-right: 0;
+
+    .container {
+      flex-direction: column;
+      padding: 2rem;
+    }
   }
 }
