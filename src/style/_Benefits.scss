@@ -1,6 +1,6 @@
 .benefits {
   padding: 96px 0;
-  background-color: var(--color-surface);
+  background-color: #f3f4f6;
 
   .container {
     max-width: 1280px;
@@ -13,8 +13,8 @@
 
     .tag {
       display: inline-block;
-      background: var(--color-background);
-      border: 1px solid var(--color-border);
+      background: #e8edf1;
+      border: 1px solid #d5dbe2;
       border-radius: 999px;
       padding: 0.45rem 1rem;
       font-weight: 700;
@@ -31,7 +31,7 @@
 
     p {
       margin-top: 1rem;
-      color: var(--color-text-secondary);
+      color: #4b5563;
       font-size: 1.2rem;
     }
   }
@@ -44,8 +44,8 @@
   }
 
   &__stat {
-    background: var(--color-background);
-    border: 1px solid var(--color-border);
+    background: #eceff3;
+    border: 1px solid #dce1e7;
     border-radius: 22px;
     padding: 2.2rem;
     text-align: center;
@@ -58,7 +58,7 @@
     }
 
     p {
-      color: var(--color-text-primary);
+      color: #1f2937;
       font-weight: 600;
       font-size: 1.2rem;
     }

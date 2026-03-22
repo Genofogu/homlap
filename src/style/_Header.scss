@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--color-surface);
+  background: #f3f4f6;
   padding: 0.75rem 0;
 
   &__nav {
@@ -11,8 +11,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-background);
-    border: 1px solid var(--color-border);
+    background-color: #eef2f5;
+    border: 1px solid #d5dce4;
     border-radius: 999px;
     padding: 0.5rem 1rem;
   }
@@ -36,7 +36,7 @@
   }
 
   &__link {
-    color: var(--color-text-primary);
+    color: #262626;
     font-weight: 600;
   }
 
