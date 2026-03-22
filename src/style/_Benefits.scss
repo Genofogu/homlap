@@ -1,119 +1,72 @@
-// src/style/_Benefits.scss
-
- .background_attachment{
-    background: image("https://framerusercontent.com/images/ZakTInlvJL0Mfl4dH4G6d8dwj4.png") fixed ;
-    background-attachment: fixed;
-    height: 50vh;
-  }
-  
 .benefits {
   padding: 96px 0;
-  background-color: var(--color-background);
+  background-color: var(--color-surface);
 
   .container {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
   }
- 
 
   &__heading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
     text-align: center;
-  }
 
-  &__main {
-    display: flex;
-    gap: 80px;
-    align-items: center;
-  }
-
-  &__content {
-    flex: 1;
-    display: grid;
-    // Creates two columns of benefit cards
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-  }
-
-  &__visual {
-    flex: 1;
-
-    img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 24px;
-    }
-  }
-}
-
-// Styles for our reusable BenefitCard component
-.benefit-card {
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
-
-  &__icon {
-    background-color: $color-accent;
-    border-radius: 28px;
-    min-width: 48px;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: var(--color-button-text);
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px var(--color-shadow);
-    }
-
-    svg {
-      width: 24px;
-      height: 24px;
-    }
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    h3 {
-      font-family: $font-secondary;
-      font-size: 20px;
+    .tag {
+      display: inline-block;
+      background: var(--color-background);
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      padding: 0.45rem 1rem;
       font-weight: 700;
-      letter-spacing: -0.6px;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: $font-secondary;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      letter-spacing: -1px;
+      max-width: 18ch;
+      margin: 0 auto;
     }
 
     p {
+      margin-top: 1rem;
       color: var(--color-text-secondary);
-      line-height: 1.4;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__stats {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  &__stat {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 22px;
+    padding: 2.2rem;
+    text-align: center;
+
+    h3 {
+      font-family: $font-secondary;
+      font-size: clamp(2rem, 4vw, 3.9rem);
+      letter-spacing: -1.5px;
+      margin-bottom: 0.35rem;
+    }
+
+    p {
+      color: var(--color-text-primary);
+      font-weight: 600;
+      font-size: 1.2rem;
     }
   }
 }
 
-// Responsive styles
-@media (max-width: 960px) {
-  .benefits__main {
-    flex-direction: column-reverse; // Puts the image on top on smaller screens
-  }
-}
-
-
-@media (max-width: 600px) {
-  .benefits__content {
-    grid-template-columns: 1fr; // Stacks the cards into a single column
-  }
-
-  .section-title {
-    font-size: 40px;
+@media (max-width: 900px) {
+  .benefits__stats {
+    grid-template-columns: 1fr;
   }
 }

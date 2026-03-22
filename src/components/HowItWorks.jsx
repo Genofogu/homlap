@@ -1,47 +1,40 @@
-import { Link } from 'react-router-dom';
 import React from 'react';
 import howItWorksPhone from '../assets/images/how-it-works-phone.png';
+
+const steps = [
+  {
+    title: 'Choose your city and budget',
+    text: 'Filter homes by location, rent range, and move-in date in seconds.'
+  },
+  {
+    title: 'Shortlist and book instantly',
+    text: 'View verified details, check amenities, and lock your home in a few taps.'
+  },
+  {
+    title: 'Move in without friction',
+    text: 'Complete payment and documentation online with Homlap support at every step.'
+  }
+];
 
 const HowItWorks = () => {
   return (
     <section className="how-it-works" id="how-it-works">
       <div className="container">
         <div className="how-it-works__heading">
-          <span className="tag">HOW DOES IT WORK</span>
-          <h2 className="section-title">Homlap House Rent – Made for You</h2>
+          <span className="tag">How it works</span>
+          <h2 className="section-title">Simple steps to your next rental home</h2>
+          <p>From search to move-in, Homlap keeps renting fast and clear.</p>
         </div>
 
-        <div className="how-it-works__main">
-          <div className="how-it-works__visual">
-           <img src={howItWorksPhone} alt="Phone showing Homlap interface" />
-          </div>
-          <div className="how-it-works__steps">
-            <div className="how-it-works__step">
-              <div className="how-it-works__step-number">1</div>
-              <div className="how-it-works__step-content">
-                <h3>Create your profile in minutes</h3>
-              </div>
-            </div>
-            <div className="how-it-works__step">
-              <div className="how-it-works__step-number">2</div>
-              <div className="how-it-works__step-content">
-                <h3>Save money with no brokers and no extra charges</h3>
-              </div>
-            </div>
-            <div className="how-it-works__step">
-              <div className="how-it-works__step-number">3</div>
-              <div className="how-it-works__step-content">
-                <h3>Book with just a few clicks, no site visit required</h3>
-              </div>
-            </div>
-            <div className="how-it-works__step">
-              <div className="how-it-works__step-number">4</div>
-              <div className="how-it-works__step-content">
-                <h3>Find properties instantly by location, budget, and amenities</h3>
-              </div>
-            </div>
-            <Link to="/pre-register" className="button">Get Started</Link>
-          </div>
+        <div className="how-it-works__cards">
+          {steps.map((step, index) => (
+            <article className="how-it-works__card" key={step.title}>
+              <span className="how-it-works__card-step">Step {index + 1}</span>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+              <img src={howItWorksPhone} alt="Homlap app flow" />
+            </article>
+          ))}
         </div>
       </div>
     </section>
