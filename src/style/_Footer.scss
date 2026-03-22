@@ -53,9 +53,10 @@
     gap: 1.5rem;
     align-items: start;
   }
+}
 
-  &__nav-col {
-    display: flex;
+@media (max-width: 640px) {
+  .footer__store-buttons {
     flex-direction: column;
     gap: 0.85rem;
 
