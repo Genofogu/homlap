@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
-import { PROPERTY_TYPES } from "../constants/data";
+import { PROPERTY_TYPES, SECTORS } from "../constants/data";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -26,12 +26,44 @@ const Navbar = () => {
               Home
             </Link>
 
-            <Link
-              to="/coming-soon"
-              className="text-sm font-semibold text-slate-600 hover:text-homlap transition-colors"
+            <div
+              className="relative group"
+              onMouseEnter={() => setActiveDropdown("sectors")}
+              onMouseLeave={() => setActiveDropdown(null)}
             >
-              Cities
-            </Link>
+              <button
+                className={`flex items-center text-sm font-semibold transition-colors ${activeDropdown === "sectors" ? "text-homlap" : "text-slate-600 hover:text-homlap"}`}
+              >
+                Sectors{" "}
+                {activeDropdown === "sectors" ? (
+                  <ChevronUp className="ml-1 w-4 h-4" />
+                ) : (
+                  <ChevronDown className="ml-1 w-4 h-4" />
+                )}
+              </button>
+              <AnimatePresence>
+                {activeDropdown === "sectors" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 5 }}
+                    className="absolute left-1/2 -translate-x-1/2 mt-4 w-[240px] bg-white rounded-2xl shadow-xl border border-slate-100 p-4 z-[60]"
+                  >
+                    <div className="space-y-2 text-left">
+                      {SECTORS.map((sector) => (
+                        <Link
+                          key={sector.name}
+                          to="/coming-soon"
+                          className="block px-3 py-2 text-sm font-medium text-slate-600 hover:bg-homlap-light hover:text-homlap rounded-lg transition-colors"
+                        >
+                          {sector.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             <div
               className="relative group"
@@ -101,9 +133,23 @@ const Navbar = () => {
           <Link to="/" className="block text-xl font-bold">
             Home
           </Link>
-          <Link to="/coming-soon" className="block text-xl font-bold">
-            Cities
-          </Link>
+          <div className="space-y-4 pt-2 border-t border-slate-50">
+            <p className="text-xs font-black text-slate-400 uppercase tracking-widest">
+              SECTORS
+            </p>
+            <div className="grid grid-cols-2 gap-4">
+              {SECTORS.map((sector) => (
+                <Link
+                  key={sector.name}
+                  to="/coming-soon"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-sm font-medium text-slate-600 hover:text-homlap transition-colors"
+                >
+                  {sector.name}
+                </Link>
+              ))}
+            </div>
+          </div>
           <Link
             to="/list-property"
             onClick={() => setMobileMenuOpen(false)}

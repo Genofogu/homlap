@@ -13,6 +13,15 @@ import { useEffect } from "react";
 const ListPropertyPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    // Programmatic SEO title & meta description updates
+    document.title = "List Your Property | HOMLAP — Zero Brokerage Rentals";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        "content",
+        "Onboard your PG, flat, studio apartment, or room in Greater Noida on HOMLAP. Connect directly with tenants, enjoy direct inquiries, and get early access benefits."
+      );
+    }
   }, []);
 
   return (
@@ -27,13 +36,13 @@ const ListPropertyPage = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block bg-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-homlap border border-homlap/10 mb-8 shadow-sm">
-              HOMLAP FOR OWNERS
+              HOMLAP FOR PARTNERS
             </span>
             <h1 className="text-5xl md:text-7xl font-black text-slate-950 leading-[0.95] mb-8 tracking-tighter">
               List Your Property <br />
               <span className="text-homlap">on Homlap</span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-4 font-medium leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-4 font-bold tracking-tight">
               Are you a property owner, builder, or property manager?
             </p>
             <p className="text-base md:text-lg text-slate-500 max-w-3xl mx-auto font-medium leading-relaxed">
@@ -56,10 +65,10 @@ const ListPropertyPage = () => {
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tighter">
                   Early Property Listings Open
                 </h2>
-                <p className="text-slate-600 font-medium leading-relaxed">
+                <p className="text-slate-600 font-semibold leading-relaxed">
                   We are currently onboarding property owners through a simple Google Form. Whether you own:
                 </p>
-                <ul className="grid grid-cols-2 gap-4 pt-2">
+                <ul className="grid grid-cols-2 gap-x-6 gap-y-4 pt-2">
                   {[
                     "PGs",
                     "Rental Rooms",
@@ -68,8 +77,8 @@ const ListPropertyPage = () => {
                     "Family Homes",
                     "Shared Apartments"
                   ].map((item, idx) => (
-                    <li key={idx} className="flex items-center space-x-3 text-slate-700 font-semibold text-sm">
-                      <span className="w-2 h-2 rounded-full bg-homlap"></span>
+                    <li key={idx} className="flex items-center space-x-3 text-slate-700 font-bold text-sm">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -81,7 +90,7 @@ const ListPropertyPage = () => {
             </div>
 
             {/* Availability Column */}
-            <div className="lg:col-span-5 bg-emerald-50/50 p-10 md:p-12 rounded-[2.5rem] border-2 border-dashed border-emerald-200/80 flex flex-col justify-center space-y-6">
+            <div className="lg:col-span-5 bg-emerald-50/40 p-10 md:p-12 rounded-[2.5rem] border-2 border-dashed border-emerald-200/80 flex flex-col justify-center space-y-6">
               <div className="w-16 h-16 rounded-[1.5rem] bg-emerald-100 flex items-center justify-center text-3xl shadow-sm">
                 📍
               </div>
@@ -89,11 +98,11 @@ const ListPropertyPage = () => {
                 <h3 className="text-2xl font-black text-emerald-950 tracking-tight">
                   Currently Available in Greater Noida
                 </h3>
-                <p className="text-emerald-800/85 font-medium leading-relaxed text-sm">
+                <p className="text-emerald-800/85 font-semibold leading-relaxed text-sm">
                   We are currently focusing on Greater Noida and nearby sectors including Alpha 1, Alpha 2, Beta 1, Gamma 1, and Delta 1.
                 </p>
                 <div className="pt-2">
-                  <span className="inline-block px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest bg-emerald-100 text-emerald-700">
+                  <span className="inline-block px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-emerald-100 text-emerald-700 shadow-sm border border-emerald-200/30">
                     More cities coming soon
                   </span>
                 </div>
@@ -119,17 +128,17 @@ const ListPropertyPage = () => {
             {[
               {
                 title: "Early Access Partner",
-                desc: "Submit your listings early to gain an edge and establish an early partnership with us.",
+                desc: "Submit your listings early to gain a competitive edge and establish an early partnership with us.",
                 icon: Sparkles,
               },
               {
                 title: "Increased Visibility",
-                desc: "Put your property in front of high-intent searchers looking for rooms in Greater Noida.",
+                desc: "Put your property in front of high-intent searchers looking for rentals in Greater Noida.",
                 icon: TrendingUp,
               },
               {
                 title: "Direct Rental Inquiries",
-                desc: "Receive calls and messages directly from tenants with zero middleman interference.",
+                desc: "Receive calls and messages directly from potential tenants with zero brokerage or middleman interference.",
                 icon: MessageSquare,
               },
               {
@@ -144,7 +153,7 @@ const ListPropertyPage = () => {
               },
               {
                 title: "Free During Early Launch",
-                desc: "List and promote your property completely free of charge during our initial rollout.",
+                desc: "List and promote your property completely free of charge during our initial rollout phase.",
                 icon: Gift,
               },
             ].map((point, idx) => (
@@ -155,15 +164,18 @@ const ListPropertyPage = () => {
                   borderColor: "#10B981",
                   backgroundColor: "#ECFDF5",
                 }}
-                className="p-8 md:p-10 rounded-[2.5rem] border border-slate-100 bg-white transition-all group flex flex-col items-center text-center space-y-6"
+                className="p-8 md:p-10 rounded-[2.5rem] border border-slate-100 bg-white transition-all group flex flex-col items-center text-center space-y-6 shadow-sm"
               >
-                <div className="w-16 h-16 rounded-[1.5rem] bg-slate-50 flex items-center justify-center group-hover:bg-white transition-colors">
-                  <point.icon className="w-8 h-8 text-slate-400 group-hover:text-homlap transition-colors" />
+                <div className="w-16 h-16 rounded-[1.5rem] bg-emerald-50 text-emerald-600 flex items-center justify-center transition-all group-hover:bg-white group-hover:shadow-md shadow-sm">
+                  <point.icon className="w-8 h-8" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-extrabold text-slate-900 mb-2">
-                    {point.title}
-                  </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-center space-x-2">
+                    <span className="text-emerald-500 font-extrabold text-sm">✔</span>
+                    <h3 className="text-lg font-black text-slate-900 tracking-tight leading-tight">
+                      {point.title}
+                    </h3>
+                  </div>
                   <p className="text-sm font-medium text-slate-500 leading-relaxed">
                     {point.desc}
                   </p>
@@ -185,7 +197,7 @@ const ListPropertyPage = () => {
               <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight">
                 Ready to List Your Property?
               </h2>
-              <p className="text-lg text-white/90 font-medium max-w-xl mx-auto leading-relaxed">
+              <p className="text-lg text-white/95 font-medium max-w-xl mx-auto leading-relaxed">
                 Complete our property submission form and become one of the first property partners on Homlap.
               </p>
               <div className="pt-4">
@@ -201,7 +213,7 @@ const ListPropertyPage = () => {
               </div>
               
               <div className="pt-8 border-t border-white/20">
-                <p className="text-xs text-white/70 font-semibold max-w-lg mx-auto leading-relaxed">
+                <p className="text-xs text-white/80 font-bold max-w-lg mx-auto leading-relaxed">
                   After submitting the form, our team may contact you for verification before publishing your property.
                 </p>
               </div>

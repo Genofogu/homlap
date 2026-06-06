@@ -92,14 +92,18 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
-        <p className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">
-          © 2026 HOMLAP | Developed by Anu Gaur
+      <div className="pt-8 border-t border-slate-900 flex justify-center items-center text-[10px] font-bold text-slate-600 uppercase tracking-widest w-full">
+        <p className="text-center">
+          © 2026 Homlap Solutions Private Limited.
+          <Link
+            to="https://genofogu.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-500 hover:text-slate-700 transition-colors ml-2"
+          >
+            All Rights Reserved.
+          </Link>
         </p>
-        <div className="flex space-x-8 text-[10px] font-bold text-slate-600 uppercase tracking-widest">
-          <span>Made in India</span>
-          <span>HOMLAP SOLUTIONS PRIVATE LIMITED</span>
-        </div>
       </div>
     </div>
   </footer>
