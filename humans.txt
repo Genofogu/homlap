@@ -1,0 +1,16 @@
+/* TEAM */
+Co-Founder and CTO: Anu Gaur (Genofogu)
+Site: https://homlap.com
+Portfolio: https://genofogu.vercel.app
+Twitter: @genofogu
+Location: India
+
+/* THANKS */
+Design Inspiration: Modern Premium UI
+Technology Stack: React, Vite, Framer Motion, Tailwind CSS
+
+/* SITE */
+Last update: 2026/05/27
+Standards: HTML5, CSS3, ES6+
+Components: Lucide React, Framer Motion
+Software: Visual Studio Code, Vite

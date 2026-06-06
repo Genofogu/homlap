@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-homlap: #10B981; /* Representing soft green */
+  --color-homlap-dark: #059669;
+  --color-homlap-light: #ECFDF5;
+  --color-pronto: #10B981; /* Keeping legacy variable in case of oversight, but mapped to new green */
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer base {
+  body {
+    @apply font-sans text-slate-900 antialiased bg-white;
+  }
+}
