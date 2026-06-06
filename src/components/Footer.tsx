@@ -101,7 +101,7 @@ const Footer = () => (
         <p className="text-center">
           © 2026 Homlap Solutions Private Limited.
           <Link
-            to="https://genofogu.vercel.app"
+            to="/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-500 hover:text-slate-700 transition-colors ml-2"
