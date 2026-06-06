@@ -114,7 +114,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "9 min read",
     date: "June 02, 2026",
     author: "Anu Gaur, Co-Founder",
-    coverImage: "../public/assets/Team_image.png",
+    coverImage: "https://collection.cloudinary.com/djhf1j7wf/d089f7f511581142163b7fc919be2116",
     seoTitle: "Why We Started Homlap | Reimagining Rental Searches",
     seoDesc: "Read about the personal frustrations and student housing challenges that motivated us to start Homlap, a zero-brokerage rental discovery platform.",
     sections: [
