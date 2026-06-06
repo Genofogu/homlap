@@ -53,7 +53,7 @@ const Navbar = () => {
                       {SECTORS.map((sector) => (
                         <Link
                           key={sector.name}
-                          to="/coming-soon"
+                          to={`/sectors/${sector.slug}`}
                           className="block px-3 py-2 text-sm font-medium text-slate-600 hover:bg-homlap-light hover:text-homlap rounded-lg transition-colors"
                         >
                           {sector.name}
@@ -92,7 +92,7 @@ const Navbar = () => {
                       {PROPERTY_TYPES.map((type) => (
                         <Link
                           key={type.name}
-                          to={`/search?type=${type.slug}`}
+                          to={`/rentals/${type.slug}`}
                           className="flex items-center space-x-3 px-3 py-2 text-sm font-medium text-slate-600 hover:bg-homlap-light hover:text-homlap rounded-lg transition-colors"
                         >
                           <type.icon className="w-4 h-4" />
@@ -148,7 +148,7 @@ const Navbar = () => {
               {SECTORS.map((sector) => (
                 <Link
                   key={sector.name}
-                  to="/coming-soon"
+                  to={`/sectors/${sector.slug}`}
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-sm font-medium text-slate-600 hover:text-homlap transition-colors"
                 >

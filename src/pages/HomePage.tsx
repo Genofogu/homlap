@@ -27,7 +27,6 @@ const HomePage = () => {
 
   return (
     <main>
-      {/* Hero */}
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[140%] h-[120%] bg-gradient-to-b from-homlap-light/40 via-transparent to-transparent -z-10 rounded-[100%]" />
         <div className="max-w-7xl mx-auto px-4 text-center flex flex-col items-center">
@@ -36,19 +35,19 @@ const HomePage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block bg-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-homlap border border-homlap/10 mb-8 shadow-sm">
+            <span className="inline-block bg-white px-2 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-homlap border border-homlap/10 mb-8 shadow-sm">
               ZERO BROKERAGE PLATFORM
             </span>
             <h1 className="text-6xl md:text-8xl font-black text-slate-950 leading-[0.95] mb-8 tracking-tighter">
               Find your perfect home <br />{" "}
               <span className="text-homlap">without the stress.</span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 font-medium leading-relaxed">
+            <p className="text-sm md:text-lg text-slate-600 max-w-2xl mx-auto mb-10 font-medium leading-relaxed">
               Explore verified PGs, flats, rooms, and rental homes across India.
-              Seamless discovery, direct contacts, premium living.
+              <br />Seamless discovery, direct contacts, premium living.
             </p>
             <div className="mb-12 flex flex-col items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-extrabold bg-emerald-50 text-emerald-700 border border-emerald-200/60 shadow-sm">
+              <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-[11px] font-extrabold bg-emerald-50 text-emerald-700 border border-emerald-200/60 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 Currently Available in Greater Noida
               </span>
@@ -102,54 +101,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Popular Cities */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div>
-              <span className="text-xs font-black uppercase tracking-[0.2em] text-homlap-dark mb-4 block">
-                EXPLORE BY LOCATION
-              </span>
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter">
-                Popular Sectors In Greater Noida
-              </h2>
-            </div>
-            <Link
-              to="/coming-soon"
-              className="text-sm font-bold text-slate-950 hover:text-homlap flex items-center transition-colors"
-            >
-              View all sectors <ArrowRight className="ml-2 w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
-            {SECTORS.map((sector, idx) => (
-              <Link key={idx} to="/coming-soon">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="relative group aspect-[3/4] rounded-3xl overflow-hidden shadow-sm cursor-pointer"
-                >
-                  <img
-                    src={sector.image}
-                    alt={sector.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent group-hover:via-slate-950/40 transition-all duration-300" />
-                  <div className="absolute bottom-6 left-6">
-                    <h3 className="text-lg font-black text-white mb-1">
-                      {sector.name}
-                    </h3>
-                    <div className="flex items-center text-[10px] uppercase font-black text-homlap tracking-widest opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all">
-                      Explore <ArrowRight className="ml-1 w-3 h-3" />
-                    </div>
-                  </div>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Property Types */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4">
@@ -162,7 +113,7 @@ const HomePage = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {PROPERTY_TYPES.map((type, idx) => (
               <motion.div
                 key={idx}
@@ -171,7 +122,7 @@ const HomePage = () => {
                   borderColor: "#10B981",
                   backgroundColor: "#ECFDF5",
                 }}
-                className="p-10 rounded-[2.5rem] border border-slate-100 bg-white transition-all group flex flex-col items-center text-center space-y-6"
+                className="p-4 sm:p-6 lg:p-10 rounded-[2rem] sm:rounded-[2.5rem] border border-slate-100 bg-white transition-all group flex flex-col items-center text-center space-y-6"
               >
                 <div className="w-20 h-20 rounded-[2rem] bg-slate-50 flex items-center justify-center group-hover:bg-white transition-colors">
                   <type.icon className="w-10 h-10 text-slate-400 group-hover:text-homlap transition-colors" />
@@ -185,7 +136,7 @@ const HomePage = () => {
                   </p>
                 </div>
                 <Link
-                  to={`/search?type=${type.slug}`}
+                  to={`/rentals/${type.slug}`}
                   className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-300 group-hover:text-homlap flex items-center transition-colors"
                 >
                   Explore Category <ArrowRight className="ml-2 w-3 h-3" />
@@ -208,7 +159,7 @@ const HomePage = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-10 -right-10 bg-white p-8 rounded-[2rem] shadow-2xl border border-slate-50 max-w-xs">
+              <div className="absolute -bottom-6 right-2 sm:right-4 lg:-bottom-10 lg:-right-10 lg:right-auto bg-white p-4 sm:p-6 lg:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl border border-slate-50 max-w-[220px] sm:max-w-[280px] lg:max-w-xs">
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="w-10 h-10 bg-homlap rounded-full flex items-center justify-center">
                     <ShieldCheck className="text-white w-6 h-6" />
@@ -295,7 +246,7 @@ const HomePage = () => {
           </h2>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 lg:grid-cols-4 gap-20">
+        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-20">
           {[
             {
               step: "01",
@@ -347,12 +298,12 @@ const HomePage = () => {
             </h2>
           </div>
 
-          <div className="flex space-x-8 pb-12 overflow-x-auto scrollbar-hide px-4">
+          <div className="w-full flex space-x-8 pb-12 overflow-x-auto scrollbar-hide px-4">
             {TESTIMONIALS.map((t, idx) => (
               <motion.div
                 key={idx}
                 whileHover={{ y: -10 }}
-                className="flex-shrink-0 w-80 md:w-96 bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm"
+                className="flex-shrink-0 w-[280px] sm:w-80 md:w-96 bg-white p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] border border-slate-100 shadow-sm"
               >
                 <div className="flex mb-6">
                   {[...Array(t.rating)].map((_, i) => (
@@ -406,7 +357,7 @@ const HomePage = () => {
       {/* App Download Footer */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="bg-homlap p-12 lg:p-24 rounded-[4rem] relative overflow-hidden flex flex-col lg:flex-row items-center gap-16 shadow-2xl shadow-homlap/40">
+          <div className="bg-homlap p-6 sm:p-12 lg:p-24 rounded-[2rem] sm:rounded-[4rem] relative overflow-hidden flex flex-col lg:flex-row items-center gap-10 lg:gap-16 shadow-2xl shadow-homlap/40">
             <div className="relative z-10 flex-1 text-center lg:text-left space-y-8">
               <h2 className="text-5xl lg:text-7xl font-black text-white leading-tight tracking-tighter">
                 Download Homlap & <br className="hidden lg:block" /> Find Your
@@ -419,7 +370,7 @@ const HomePage = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
                   to="/coming-soon"
-                  className="bg-[#000000] hover:bg-slate-900 text-white px-8 py-4 rounded-2xl flex items-center space-x-3 transition-all shadow-xl shadow-black/20 border border-white/10 active:scale-95"
+                  className="bg-[#000000] hover:bg-slate-900 text-white w-52 py-4 rounded-2xl flex items-center justify-center space-x-3 transition-all shadow-xl shadow-black/20 border border-white/10 active:scale-95"
                 >
                   <div className="w-8 h-8 flex items-center justify-center">
                     <img src="/assets/google-play-logo.svg" alt="Google Play" className="w-7 h-7" />
@@ -435,7 +386,7 @@ const HomePage = () => {
                 </Link>
                 <Link
                   to="/coming-soon"
-                  className="bg-[#000000] hover:bg-slate-900 text-white px-8 py-4 rounded-2xl flex items-center space-x-3 transition-all shadow-xl shadow-black/20 border border-white/10 active:scale-95"
+                  className="bg-[#000000] hover:bg-slate-900 text-white w-52 py-4 rounded-2xl flex items-center justify-center space-x-3 transition-all shadow-xl shadow-black/20 border border-white/10 active:scale-95"
                 >
                   <div className="w-8 h-8 flex items-center justify-center">
                     <svg viewBox="0 0 24 24" className="w-7 h-7 fill-white">
@@ -453,7 +404,7 @@ const HomePage = () => {
                 </Link>
               </div>
             </div>
-            <div className="flex-1 relative w-full h-[400px]">
+            <div className="hidden lg:block flex-1 relative w-full h-[400px]">
               <div className="absolute top-0 right-0 w-[300px] h-[600px] bg-white/10 rounded-[3rem] backdrop-blur-xl border border-white/20 rotate-12 -z-1" />
               <div className="absolute top-10 right-20 w-[300px] h-[600px] bg-white rounded-[3rem] shadow-2xl p-4 rotate-6 group">
                 <div className="w-full h-full bg-slate-950 rounded-[2.5rem] overflow-hidden">

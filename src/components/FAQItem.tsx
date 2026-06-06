@@ -1,9 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { FAQ } from "../constants/data";
 
-const FAQItem = ({ faq }: { faq: FAQ }) => {
+const FAQItem: React.FC<{ faq: FAQ }> = ({ faq }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

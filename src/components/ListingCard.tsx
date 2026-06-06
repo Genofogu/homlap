@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "motion/react";
 import { Heart, MapPin, Star } from "lucide-react";
 import { Listing } from "../constants/data";
@@ -22,7 +23,7 @@ export const ListingCardSkeleton = () => (
   </div>
 );
 
-export const ListingCard = ({ listing }: { listing: Listing }) => (
+export const ListingCard: React.FC<{ listing: Listing }> = ({ listing }) => (
   <motion.div
     whileHover={{ y: -8 }}
     className="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all"

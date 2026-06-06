@@ -21,7 +21,7 @@ const ContactPage = () => (
       </p>
       <a
         href="mailto:support@homlap.com"
-        className="inline-flex items-center space-x-4 bg-slate-950 text-white px-10 py-6 rounded-[2.5rem] font-bold text-2xl shadow-2xl shadow-slate-200 hover:bg-slate-900 transition-all active:scale-95"
+        className="inline-flex items-center space-x-4 bg-slate-950 text-white px-6 py-4 sm:px-10 sm:py-6 rounded-2xl sm:rounded-[2.5rem] font-bold text-base sm:text-2xl shadow-2xl shadow-slate-200 hover:bg-slate-900 transition-all active:scale-95"
       >
         <span>support@homlap.com</span>
       </a>

@@ -49,7 +49,7 @@ const BlogLandingPage = () => {
     <main className="pt-24 pb-24">
       {/* Blog Hero */}
       <section className="relative pt-20 pb-16 lg:pt-28 lg:pb-20 overflow-hidden bg-slate-50 border-b border-slate-100">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[140%] h-[120%] bg-gradient-to-b from-homlap-light/30 via-transparent to-transparent -z-10 rounded-[100%]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full lg:w-[140%] h-[120%] bg-gradient-to-b from-homlap-light/30 via-transparent to-transparent -z-10 rounded-[100%]" />
         <div className="max-w-7xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 15 }}

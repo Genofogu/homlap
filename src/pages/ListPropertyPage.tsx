@@ -28,7 +28,7 @@ const ListPropertyPage = () => {
     <main className="pt-24 overflow-hidden">
       {/* Hero Section */}
       <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-24 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[140%] h-[120%] bg-gradient-to-b from-homlap-light/40 via-transparent to-transparent -z-10 rounded-[100%]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full lg:w-[140%] h-[120%] bg-gradient-to-b from-homlap-light/40 via-transparent to-transparent -z-10 rounded-[100%]" />
         <div className="max-w-7xl mx-auto px-4 text-center flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ const ListPropertyPage = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-12 gap-12 items-stretch">
             {/* Info Column */}
-            <div className="lg:col-span-7 bg-white p-10 md:p-12 rounded-[2.5rem] border border-slate-100 flex flex-col justify-between space-y-8 shadow-sm">
+            <div className="lg:col-span-7 bg-white p-6 sm:p-10 md:p-12 rounded-[2rem] sm:rounded-[2.5rem] border border-slate-100 flex flex-col justify-between space-y-8 shadow-sm">
               <div className="space-y-6">
                 <span className="text-xs font-black uppercase tracking-[0.2em] text-homlap block">
                   ONBOARDING NOW
@@ -90,7 +90,7 @@ const ListPropertyPage = () => {
             </div>
 
             {/* Availability Column */}
-            <div className="lg:col-span-5 bg-emerald-50/40 p-10 md:p-12 rounded-[2.5rem] border-2 border-dashed border-emerald-200/80 flex flex-col justify-center space-y-6">
+            <div className="lg:col-span-5 bg-emerald-50/40 p-6 sm:p-10 md:p-12 rounded-[2rem] sm:rounded-[2.5rem] border-2 border-dashed border-emerald-200/80 flex flex-col justify-center space-y-6">
               <div className="w-16 h-16 rounded-[1.5rem] bg-emerald-100 flex items-center justify-center text-3xl shadow-sm">
                 📍
               </div>
@@ -164,7 +164,7 @@ const ListPropertyPage = () => {
                   borderColor: "#10B981",
                   backgroundColor: "#ECFDF5",
                 }}
-                className="p-8 md:p-10 rounded-[2.5rem] border border-slate-100 bg-white transition-all group flex flex-col items-center text-center space-y-6 shadow-sm"
+                className="p-6 sm:p-8 md:p-10 rounded-[2rem] sm:rounded-[2.5rem] border border-slate-100 bg-white transition-all group flex flex-col items-center text-center space-y-6 shadow-sm"
               >
                 <div className="w-16 h-16 rounded-[1.5rem] bg-emerald-50 text-emerald-600 flex items-center justify-center transition-all group-hover:bg-white group-hover:shadow-md shadow-sm">
                   <point.icon className="w-8 h-8" />
@@ -189,7 +189,7 @@ const ListPropertyPage = () => {
       {/* Call to Action Section */}
       <section className="py-24 bg-slate-50 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-4">
-          <div className="bg-homlap p-12 md:p-20 rounded-[3.5rem] text-center relative overflow-hidden shadow-2xl shadow-homlap/30">
+          <div className="bg-homlap p-6 sm:p-12 md:p-20 rounded-[2rem] sm:rounded-[3.5rem] text-center relative overflow-hidden shadow-2xl shadow-homlap/30">
             {/* Background decorative gradient */}
             <div className="absolute inset-0 bg-gradient-to-tr from-homlap-dark/40 to-transparent pointer-events-none" />
             
@@ -205,7 +205,7 @@ const ListPropertyPage = () => {
                   href="https://forms.gle/rpuprPwkyBz5C6ee7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-3 bg-white text-homlap hover:bg-slate-50 px-10 py-5 rounded-[2rem] font-extrabold text-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 duration-200"
+                  className="inline-flex items-center space-x-3 bg-white text-homlap hover:bg-slate-50 px-6 py-4 sm:px-10 sm:py-5 rounded-2xl sm:rounded-[2rem] font-extrabold text-sm sm:text-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 duration-200"
                 >
                   <span>Click Here to List Property</span>
                   <ArrowRight className="w-5 h-5" />

@@ -45,7 +45,7 @@ export interface FAQ {
   a: string;
 }
 
-export const SECTORS: Sector[] = [
+export const SECTORS: City[] = [
   {
     name: "Alpha 1",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
@@ -99,7 +99,7 @@ export const PROPERTY_TYPES: PropertyType[] = [
     name: "Shared Apartments",
     icon: Heart,
     desc: "Live with like-minded people",
-    slug: "shared",
+    slug: "shared-apartments",
   },
   {
     name: "Studio Apartments",
@@ -158,7 +158,7 @@ export const FEATURED_LISTINGS: Listing[] = [
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: "Rahul S.",
+    name: "Anu Gaur",
     role: "Student",
     text: "Found a great PG near my college within 2 days. The verification process gave me peace of mind.",
     rating: 5,

@@ -11,7 +11,7 @@ const ComingSoonPage = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <h1 className="text-6xl md:text-8xl font-black text-slate-950 mb-8 tracking-tighter">
+      <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-slate-950 mb-8 tracking-tighter">
         {title.split(" ").map((word, i) => (
           <span key={i}>
             {word === "Soon." ? <span className="text-homlap">{word}</span> : word}{" "}

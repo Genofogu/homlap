@@ -13,11 +13,13 @@ import ContactPage from "./pages/ContactPage";
 import ListPropertyPage from "./pages/ListPropertyPage";
 import BlogLandingPage from "./pages/BlogLandingPage";
 import BlogArticlePage from "./pages/BlogArticlePage";
+import SectorPage from "./pages/SectorPage";
+import RentalPage from "./pages/RentalPage";
 
 export default function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-homlap selection:text-white">
+      <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-homlap selection:text-white overflow-x-hidden">
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -49,6 +51,8 @@ export default function App() {
             path="/contact" 
             element={<ContactPage />} 
           />
+          <Route path="/sectors/:slug" element={<SectorPage />} />
+          <Route path="/rentals/:slug" element={<RentalPage />} />
           <Route path="/:slug" element={<CityPage />} />
         </Routes>
         <Footer />
