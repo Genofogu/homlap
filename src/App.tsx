@@ -11,6 +11,8 @@ import CityPage from "./pages/CityPage";
 import ComingSoonPage from "./pages/ComingSoonPage";
 import ContactPage from "./pages/ContactPage";
 import ListPropertyPage from "./pages/ListPropertyPage";
+import BlogLandingPage from "./pages/BlogLandingPage";
+import BlogArticlePage from "./pages/BlogArticlePage";
 
 export default function App() {
   return (
@@ -30,6 +32,14 @@ export default function App() {
           <Route 
             path="/list-property" 
             element={<ListPropertyPage />} 
+          />
+          <Route 
+            path="/blog" 
+            element={<BlogLandingPage />} 
+          />
+          <Route 
+            path="/blog/:slug" 
+            element={<BlogArticlePage />} 
           />
           <Route 
             path="/search" 

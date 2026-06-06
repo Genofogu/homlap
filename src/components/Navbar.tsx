@@ -106,6 +106,13 @@ const Navbar = () => {
             </div>
 
             <Link
+              to="/blog"
+              className="text-sm font-semibold text-slate-600 hover:text-homlap transition-colors"
+            >
+              Blog
+            </Link>
+
+            <Link
               to="/list-property"
               className="bg-homlap text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-homlap/20 hover:bg-homlap-dark transition-all"
             >
@@ -150,6 +157,13 @@ const Navbar = () => {
               ))}
             </div>
           </div>
+          <Link
+            to="/blog"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-xl font-bold"
+          >
+            Blog
+          </Link>
           <Link
             to="/list-property"
             onClick={() => setMobileMenuOpen(false)}
